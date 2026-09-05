@@ -1,4 +1,4 @@
-# Contributing to @numra/react
+# Contributing to @getnumra/react
 
 Patches are welcome. What this package renders is what a merchant's staff act
 on, so the bar for a change is a test that would have caught the bug, not a
@@ -35,7 +35,7 @@ Two tests here are not negotiable:
   showing a stale verdict, that the badge is announced to assistive
   technology, and that a nonsensical score cannot crash the render. The
   contrast of every colour pair is enforced one level down, in
-  `@numra/browser`, because that is where the colours are defined.
+  `@getnumra/browser`, because that is where the colours are defined.
 
 ## Which repository your fix belongs in
 
@@ -48,7 +48,7 @@ Vue, Svelte and Angular packages.
 So:
 
 - Anything about *what a check means* — labels, colours, when a request fires,
-  which answer wins — belongs in **`@numra/browser`**. Fixing it here alone is
+  which answer wins — belongs in **`@getnumra/browser`**. Fixing it here alone is
   how the four bindings drift, and they have before.
 - Anything React-shaped — the hook's lifecycle, the JSX, the prop names —
   belongs here.
@@ -56,7 +56,7 @@ So:
   [numra-js-core](https://github.com/NumraApp/numra-js-core) or the framework
   package that mounts it.
 
-If your fix lands in `@numra/browser`, this package picks it up as a
+If your fix lands in `@getnumra/browser`, this package picks it up as a
 dependency bump; say so in the pull request.
 
 ## The conformance gate

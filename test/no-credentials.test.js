@@ -45,15 +45,15 @@ test('no source file can reach the Numra API directly', () => {
   }
 });
 
-test('the package does not depend on @numra/core', () => {
-  /* @numra/core throws in a browser by design. Depending on it here would
+test('the package does not depend on @getnumra/core', () => {
+  /* @getnumra/core throws in a browser by design. Depending on it here would
      either break the bundle or tempt someone to remove that guard. */
   const deps = { ...pkg.dependencies, ...pkg.devDependencies };
-  assert.ok(!('@numra/core' in deps), '@numra/core must not be a dependency of a browser package');
+  assert.ok(!('@getnumra/core' in deps), '@getnumra/core must not be a dependency of a browser package');
 });
 
-test('requests go through @numra/browser, to the merchant’s own endpoint', () => {
-  /* The fetch itself moved to @numra/browser, which has its own copy of this
+test('requests go through @getnumra/browser, to the merchant’s own endpoint', () => {
+  /* The fetch itself moved to @getnumra/browser, which has its own copy of this
      file asserting same-origin. What this package must not do is grow a
      second way to make the request — one that could quietly point somewhere
      else. So: it calls checkPhone, and it defines no fetch of its own. */
@@ -62,6 +62,6 @@ test('requests go through @numra/browser, to the merchant’s own endpoint', () 
   assert.match(hook, /endpoint = '\/api\/numra'/);
 
   for (const { f, s } of files) {
-    assert.ok(!/\bfetch\s*\(/.test(s), `${f} makes its own request instead of using @numra/browser`);
+    assert.ok(!/\bfetch\s*\(/.test(s), `${f} makes its own request instead of using @getnumra/browser`);
   }
 });

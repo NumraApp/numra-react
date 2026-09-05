@@ -1,14 +1,14 @@
-# @numra/react
+# @getnumra/react
 
 **A debounced phone-check hook and a risk badge for React, talking to your own backend.**
 
-[![npm version](https://img.shields.io/npm/v/@numra/react)](https://www.npmjs.com/package/@numra/react) [![npm downloads](https://img.shields.io/npm/dm/@numra/react)](https://www.npmjs.com/package/@numra/react) [![licence: MIT](https://img.shields.io/npm/l/@numra/react)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/@getnumra/react)](https://www.npmjs.com/package/@getnumra/react) [![npm downloads](https://img.shields.io/npm/dm/@getnumra/react)](https://www.npmjs.com/package/@getnumra/react) [![licence: MIT](https://img.shields.io/npm/l/@getnumra/react)](LICENSE)
 
 React hook and components for Numra.
 
 **This package never holds an API key and never talks to Numra.** It calls
-your own backend — the one `@numra/express` (or `@numra/fastify`,
-`@numra/next`, `@numra/nuxt`, `numra/laravel`) mounts for you.
+your own backend — the one `@getnumra/express` (or `@getnumra/fastify`,
+`@getnumra/next`, `@getnumra/nuxt`, `numra/laravel`) mounts for you.
 
 Numra reads a shared fraud ledger. A key in a JavaScript bundle is readable by
 anyone who opens dev tools, so there is no publishable key and no way to make
@@ -16,13 +16,13 @@ this package talk to the API directly. A test in this repo fails the build if
 an `apiKey` or `api.numra.ma` ever appears in the source.
 
 ```bash
-npm install @numra/react @numra/express
+npm install @getnumra/react @getnumra/express
 ```
 
 ## Use it
 
 ```jsx
-import { useNumraCheck, RiskBadge } from '@numra/react';
+import { useNumraCheck, RiskBadge } from '@getnumra/react';
 
 function OrderRow({ phone }) {
   const { data, isLoading, error } = useNumraCheck(phone);
@@ -74,7 +74,7 @@ disagree about the same number.
 If you build your own badge, use the same logic:
 
 ```js
-import { riskStateFor, RISK_STATES } from '@numra/react';
+import { riskStateFor, RISK_STATES } from '@getnumra/react';
 const state = RISK_STATES[riskStateFor(data)];
 ```
 
@@ -82,7 +82,7 @@ const state = RISK_STATES[riskStateFor(data)];
 
 `RiskBadge` uses inline styles so it works with no stylesheet in any setup.
 Every colour pair clears 4.5:1 contrast, enforced by a test in
-[`@numra/browser`](https://github.com/NumraApp/numra-browser) — that is where
+[`@getnumra/browser`](https://github.com/NumraApp/numra-browser) — that is where
 the colours are defined, so that is where the check belongs. Pass `style` to
 override the container.
 
@@ -114,11 +114,11 @@ Server:
 
 | Package | Repository |
 |---|---|
-| `@numra/core` | [numra-js-core](https://github.com/NumraApp/numra-js-core) |
-| `@numra/express` | [numra-express](https://github.com/NumraApp/numra-express) |
-| `@numra/fastify` | [numra-fastify](https://github.com/NumraApp/numra-fastify) |
-| `@numra/next` | [numra-next](https://github.com/NumraApp/numra-next) |
-| `@numra/nuxt` | [numra-nuxt](https://github.com/NumraApp/numra-nuxt) |
+| `@getnumra/core` | [numra-js-core](https://github.com/NumraApp/numra-js-core) |
+| `@getnumra/express` | [numra-express](https://github.com/NumraApp/numra-express) |
+| `@getnumra/fastify` | [numra-fastify](https://github.com/NumraApp/numra-fastify) |
+| `@getnumra/next` | [numra-next](https://github.com/NumraApp/numra-next) |
+| `@getnumra/nuxt` | [numra-nuxt](https://github.com/NumraApp/numra-nuxt) |
 | `numra/numra-php` | [numra-php](https://github.com/NumraApp/numra-php) |
 | `numra/laravel` | [numra-laravel](https://github.com/NumraApp/numra-laravel) |
 
@@ -126,11 +126,11 @@ Browser:
 
 | Package | Repository |
 |---|---|
-| `@numra/browser` | [numra-browser](https://github.com/NumraApp/numra-browser) |
-| `@numra/react` | [numra-react](https://github.com/NumraApp/numra-react) — this repo |
-| `@numra/vue` | [numra-vue](https://github.com/NumraApp/numra-vue) |
-| `@numra/svelte` | [numra-svelte](https://github.com/NumraApp/numra-svelte) |
-| `@numra/angular` | [numra-angular](https://github.com/NumraApp/numra-angular) |
+| `@getnumra/browser` | [numra-browser](https://github.com/NumraApp/numra-browser) |
+| `@getnumra/react` | [numra-react](https://github.com/NumraApp/numra-react) — this repo |
+| `@getnumra/vue` | [numra-vue](https://github.com/NumraApp/numra-vue) |
+| `@getnumra/svelte` | [numra-svelte](https://github.com/NumraApp/numra-svelte) |
+| `@getnumra/angular` | [numra-angular](https://github.com/NumraApp/numra-angular) |
 
 Documentation for all of them is at [numra.ma/docs](https://numra.ma/docs).
 

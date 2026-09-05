@@ -33,7 +33,7 @@ if (READY) {
   const esbuild = (await import('esbuild')).default;
   const { js } = { js: esbuild.transformSync(fs.readFileSync(source, 'utf8'), { loader: 'jsx' }).code };
   /* Written beside the source rather than imported from a data: URL, because
-     the compiled output resolves 'react' and '@numra/browser' by name. */
+     the compiled output resolves 'react' and '@getnumra/browser' by name. */
   const out = path.join(here, '.compiled-RiskBadge.js');
   fs.writeFileSync(out, js);
   let RiskBadge;

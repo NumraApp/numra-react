@@ -39,11 +39,11 @@ test('every runtime export is declared', () => {
 });
 
 test('the shared check type is imported, not redeclared', () => {
-  /* Vue and Svelte import BrowserCheck from @numra/browser. React kept its
+  /* Vue and Svelte import BrowserCheck from @getnumra/browser. React kept its
      own copy, and the copy had already drifted: it was missing 'BLOCKED'
      from riskLevel — the one state a merchant most needs to branch on. */
   assert.doesNotMatch(dts, /interface\s+BrowserCheck\b/, 'BrowserCheck is declared locally again');
-  assert.match(dts, /from '@numra\/browser'/);
+  assert.match(dts, /from '@getnumra\/browser'/);
 });
 
 /* ── The same thing, compiled, when a compiler is available ─────────────── */

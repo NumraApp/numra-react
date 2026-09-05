@@ -1,11 +1,11 @@
 import type { CSSProperties, ReactElement } from 'react';
-import type { BrowserCheck, NumraRequestError, RiskState } from '@numra/browser';
+import type { BrowserCheck, NumraRequestError, RiskState } from '@getnumra/browser';
 
 /* No apiKey anywhere in this file, on purpose. This package talks to your own
-   backend; @numra/express (or fastify / next / nuxt / laravel) is that
+   backend; @getnumra/express (or fastify / next / nuxt / laravel) is that
    backend and holds the credential. */
 
-/* Imported, not redeclared — the way @numra/vue and @numra/svelte do it. The
+/* Imported, not redeclared — the way @getnumra/vue and @getnumra/svelte do it. The
    local copy that used to live here had already drifted: it was missing
    'BLOCKED' from riskLevel, so the one state a merchant most needs to branch
    on did not type-check. A second definition of a shared shape is a second
@@ -44,8 +44,8 @@ export type RiskStateKey = RiskState;
    `catch (e) { if (e instanceof NumraRequestError) }` pattern the README
    documents did not compile — a missing line here costs someone an afternoon.
    riskStateFor and RISK_STATES were second copies of the shared decision,
-   which is exactly what @numra/browser exists to prevent. */
-export { riskStateFor, RISK_STATES, NumraRequestError } from '@numra/browser';
+   which is exactly what @getnumra/browser exists to prevent. */
+export { riskStateFor, RISK_STATES, NumraRequestError } from '@getnumra/browser';
 
 export declare function RiskBadge(props: {
   check: BrowserCheck | null;

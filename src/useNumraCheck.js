@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { createCheckController, IDLE } from '@numra/browser';
+import { createCheckController, IDLE } from '@getnumra/browser';
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   @numra/react — the browser half
+   @getnumra/react — the browser half
    ───────────────────────────────────────────────────────────────────────────
    This package never talks to api.numra.ma and cannot be made to. There is no
    apiKey option anywhere in it, by design: Numra reads a shared fraud ledger,
    and a key in a bundle is a key in everyone's hands.
 
-   It talks to YOUR backend — the one @numra/express (or fastify / next /
+   It talks to YOUR backend — the one @getnumra/express (or fastify / next /
    nuxt / laravel / plain PHP) mounts for you. The two halves are built to
    meet: mount the router, drop in the component, no glue.
 
        app.use('/api/numra', numraRouter({ apiKey, authorize }));   // server
        const { data } = useNumraCheck(phone);                       // browser
 
-   Debounce, abort and stale-answer rejection live in @numra/browser's
+   Debounce, abort and stale-answer rejection live in @getnumra/browser's
    controller, shared with Vue and Svelte. This hook used to own that logic
    and was missing the stale-answer guard — an abort landing after the
    response resolved does not always throw, so an old verdict could overwrite

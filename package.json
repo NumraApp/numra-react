@@ -1,5 +1,5 @@
 {
-  "name": "@numra/react",
+  "name": "@getnumra/react",
   "version": "1.0.0",
   "description": "React hook and components for Numra. Calls your own backend — never holds an API key.",
   "license": "MIT",
@@ -15,7 +15,7 @@
   "types": "./index.d.ts",
   "exports": { ".": { "types": "./index.d.ts", "default": "./src/index.js" } },
   "scripts": { "test": "node --test \"test/*.test.js\"" },
-  "dependencies": { "@numra/browser": "^1.0.0" },
+  "dependencies": { "@getnumra/browser": "^1.0.0" },
   "peerDependencies": { "react": ">=18" },
   "devDependencies": {
     "@types/react": "^19.2.18",
