@@ -1,0 +1,29 @@
+{
+  "name": "@numra/react",
+  "version": "1.0.0",
+  "description": "React hook and components for Numra. Calls your own backend — never holds an API key.",
+  "license": "MIT",
+  "homepage": "https://numra.ma",
+  "repository": { "type": "git", "url": "git+https://github.com/NumraApp/numra-react.git" },
+  "bugs": { "url": "https://github.com/NumraApp/numra-react/issues" },
+  "keywords": ["numra", "react", "cod", "fraud", "morocco"],
+  "type": "module",
+  "sideEffects": false,
+  "engines": { "node": ">=22.12.0" },
+  "files": ["src", "index.d.ts", "LICENSE", "README.md"],
+  "main": "./src/index.js",
+  "types": "./index.d.ts",
+  "exports": { ".": { "types": "./index.d.ts", "default": "./src/index.js" } },
+  "scripts": { "test": "node --test \"test/*.test.js\"" },
+  "dependencies": { "@numra/browser": "^1.0.0" },
+  "peerDependencies": { "react": ">=18" },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "esbuild": "^0.28.2",
+    "jsdom": "^30.0.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "typescript": "~5.9.3"
+  },
+  "publishConfig": { "access": "public", "provenance": true }
+}
